@@ -1,9 +1,9 @@
 ﻿@page
-@model simplePrint.designerModel
+model simplePrint.designerModel
 @{
     ViewData["Title"] = "designer";
 }
-
+<!--
 <h1>designer</h1>
 <script type="text/javascript">
     var canvas, ctx, flag = false,
@@ -101,3 +101,37 @@
     <input type="button" value="Repeat Layer" id="btn" size="30" onclick="save()" style="position:absolute;top:55%;left:10%;">
     <input type="button" value="Clear Layer" id="clr" size="23" onclick="erase()" style="position:absolute;top:55%;left:15%;">
 </body>
+    -->
+<div class="container">
+    <div class="row"> </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="col-md-3">User</div>
+                <div class="col-md-9"><input type="text" id="userName" /></div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="col-md-3">Message</div>
+                <div class="col-md-9">
+                    <input type="text" id="userMessage" />
+                    <input type="button" id="sendMessage" value="Send Message" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6"> </div>
+        <div class="col-6">
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
+</div>
+<script src="~/lib/signalr/signalr.js"></script>
+<script src="~/js/chat.js"></script> 
