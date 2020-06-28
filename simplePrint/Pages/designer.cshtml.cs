@@ -64,6 +64,7 @@ namespace simplePrint
             var data = net.DownloadData("wwwroot/gcode/" + fileName);
             var content = new System.IO.MemoryStream(data);
             System.IO.File.Delete("wwwroot/gcode/" + fileName);
+            points.deleteAll();
             return File(content, "application/force-download", "your-simpleprint-design.gcode");
         }
     }
