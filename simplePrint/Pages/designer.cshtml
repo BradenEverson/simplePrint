@@ -5,15 +5,10 @@
 }
 <h1>designer</h1>
 <body onload="init()">
-    <canvas id="can" width="220" height="220" style="align-content:center;top:10%;left:10%;border:2px solid;"></canvas>
-    <div class="container">
-        <div class="row">
-            <div class="col-6">
-                <input type="button" id="sendButton" value="Submit Layer" />
-                <input type="button" id="repeatLayer" value="Repeat Previous Layer" />
-            </div>
-        </div>
+    <div id="canvas">
+        <canvas id="can" width="220" height="220" style="align-content:center;top:10%;left:10%;border:2px solid;"></canvas>
     </div>
+    <br />
     <form method="post">
         <div class="input-group">
             <input class="form-control" type="text" asp-for="bedTemp" placeholder="Bed Temperature in Celsius" />
@@ -21,6 +16,16 @@
             <input class="form-control" type="text" asp-for="zRate" placeholder="Steps per Z layer" />
             <input class="form-control" type="text" asp-for="eRate" placeholder="Steps for extruder" />
         </div>
+        <br />
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <input class="btn-dark" type="button" id="sendButton" value="Submit Layer" />
+                    <input class="btn-dark" type="button" id="repeatLayer" value="Repeat Previous Layer" />
+                </div>
+            </div>
+        </div>
+        <br />
         <button type="submit" class="btn-outline-danger">Submit And Convert my Layers to a Gcode File</button>
     </form>
     <input class="btn-light" type="button" value="Clear Layer" id="clr" size="23" onclick="erase()">
@@ -111,3 +116,4 @@
 <script src="~/lib/signalr/dist/browser/signalr.js"></script>
 
 <script src="~/js/image.js"></script>
+<style src="~/css/designer.css"></style>
