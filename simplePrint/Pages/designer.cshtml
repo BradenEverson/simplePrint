@@ -5,11 +5,12 @@
 }
 <h1>designer</h1>
 <body onload="init()">
-    <canvas id="can" width="400" height="400" style="align-content:center;top:10%;left:10%;border:2px solid;"></canvas>
+    <canvas id="can" width="220" height="220" style="align-content:center;top:10%;left:10%;border:2px solid;"></canvas>
     <div class="container">
         <div class="row">
             <div class="col-6">
                 <input type="button" id="sendButton" value="Submit Layer" />
+                <input type="button" id="repeatLayer" value="Repeat Previous Layer" />
             </div>
         </div>
     </div>
@@ -22,7 +23,7 @@
         </div>
         <button type="submit" class="btn-outline-danger">Submit And Convert my Layers to a Gcode File</button>
     </form>
-    <input type="button" value="Clear Layer" id="clr" size="23" onclick="erase()">
+    <input class="btn-light" type="button" value="Clear Layer" id="clr" size="23" onclick="erase()">
 </body>
 <script type="text/javascript">
     var xyVals = [];

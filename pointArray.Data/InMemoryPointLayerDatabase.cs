@@ -7,7 +7,7 @@ namespace pointArray.Data
 {
     public class InMemoryPointLayerDatabase : IPointData
     {
-        readonly List<List<Point>> points;
+        private List<List<Point>> points;
         public InMemoryPointLayerDatabase()
         {
             points = new List<List<Point>>();
@@ -24,6 +24,10 @@ namespace pointArray.Data
         public List<List<Point>> returnData()
         {
             return points;
+        }
+        public void deleteAll()
+        {
+            points = new List<List<Point>>();
         }
     }
 }

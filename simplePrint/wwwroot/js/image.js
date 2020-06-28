@@ -22,3 +22,10 @@ document.getElementById("sendButton").addEventListener("click", function (event)
     event.preventDefault();
     erase();
 });
+document.getElementById("repeatLayer").addEventListener("click", function (event) {
+    connection.invoke("SendMessage", "repeat").catch(function (err) {
+        return console.error(err.toString());
+    });
+    event.preventDefault();
+    erase();
+});
