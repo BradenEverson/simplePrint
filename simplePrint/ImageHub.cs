@@ -18,20 +18,23 @@ namespace simplePrint
         public async Task SendMessage(string pointArray)
         {
             List<Point> pointsOfCurrentLayer = new List<Point>();
+            int id = 0;
             foreach(string pointString in pointArray.Split(','))
             {
                 Point point = new Point();
                 string[] xyPoints = pointString.Split('&');
                 point.x = Int32.Parse(xyPoints[0]);
                 point.y = Int32.Parse(xyPoints[1]);
+                point.id = id;
                 pointsOfCurrentLayer.Add(point);
+                id++;
             }
             //Todo: Clean the data better by distincting it.
             pointsOfCurrentLayer = pointsOfCurrentLayer.GroupBy(f => f.id).Select(r => r.FirstOrDefault()).ToList();
             points.add(pointsOfCurrentLayer);
             foreach(Point p in pointsOfCurrentLayer)
             {
-                Console.Write(p.id + ":(" + p.x + "," + p.y + ") ");
+                Console.Write("(" + p.x + "," + p.y + ") ");
             }
             Console.WriteLine();
             Console.WriteLine(points.getLength());

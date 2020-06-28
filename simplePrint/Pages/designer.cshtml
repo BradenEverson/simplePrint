@@ -1,9 +1,29 @@
 ﻿@page
-model simplePrint.designerModel
+@model simplePrint.designerModel
 @{
     ViewData["Title"] = "designer";
 }
 <h1>designer</h1>
+<body onload="init()">
+    <canvas id="can" width="400" height="400" style="align-content:center;top:10%;left:10%;border:2px solid;"></canvas>
+    <input type="button" value="Clear Layer" id="clr" size="23" onclick="erase()" style="position:absolute;top:55%;left:15%;">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <input type="button" id="sendButton" value="Submit Layer" />
+            </div>
+        </div>
+    </div>
+    <form method="post">
+        <div class="input-group">
+            <input class="form-control" type="text" asp-for="bedTemp" placeholder="Bed Temperature in Celsius" />
+            <input class="form-control" type="text" asp-for="extTemp" placeholder="Nozzle Temperature(180-200C for pla)" />
+            <input class="form-control" type="text" asp-for="zRate" placeholder="Steps per Z layer" />
+            <input class="form-control" type="text" asp-for="eRate" placeholder="Steps for extruder(Should usually be around .4)" />
+        </div>
+        <button type="submit" class="btn-outline-danger">Submit And Convert my Layers to a Gcode File</button>
+    </form>
+</body>
 <script type="text/javascript">
     var xyVals = [];
     var canvas, ctx, flag = false,
@@ -89,17 +109,6 @@ model simplePrint.designerModel
         xyVals.push(xyCoords);
     }
 </script>
-<body onload="init()">
-    <canvas align="center" id="can" width="400" height="400" style="position:absolute;top:10%;left:10%;border:2px solid;"></canvas>
-    <input type="button" value="Clear Layer" id="clr" size="23" onclick="erase()" style="position:absolute;top:55%;left:15%;">
-</body>
-<div class="container">
-    <div class="row">&nbsp;</div>
-    <div class="row">
-        <div class="col-6">
-            <input type="button" id="sendButton" value="Send Message" />
-        </div>
-    </div>
-</div>
 <script src="~/lib/signalr/dist/browser/signalr.js"></script>
+
 <script src="~/js/image.js"></script>

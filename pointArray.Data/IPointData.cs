@@ -9,5 +9,6 @@ namespace pointArray.Data
     {
         List<Point> add(List<Point> newLayer);
         int getLength();
+        List<List<Point>> returnData();
     }
 }
