@@ -1,0 +1,19 @@
+Gcode Requirements:
+Startup:
+;Determine a extrusion rate ;)
+
+;Made With Simple Print :)
+M107 turns off the fan
+M190 S{bTEMP} ; set bed temperature and wait for it to be reached
+M104 S{eTEMP} ; set extruder temperature
+G28 ; home all axes
+M109 S{eTEMP} ; set temperature and wait for it to be reached
+G21 ; set units to millimeters
+G90 ; use absolute coordinates
+M82 ; use absolute distances for extrusion
+G92 E0
+Main Body:
+G1 X{X Value} Y{Y Value} Z{Z value} E{Previous extruder point + extrusion rate}
+End:
+G92 E0
+M107

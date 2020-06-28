@@ -21,5 +21,9 @@ namespace pointArray.Data
         {
             return points.Count;
         }
+        public List<List<Point>> returnData()
+        {
+            return points;
+        }
     }
 }

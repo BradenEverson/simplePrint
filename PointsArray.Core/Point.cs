@@ -6,7 +6,8 @@ namespace PointsArray.Core
 {
     public class Point
     {
-        int x;
-        int y;
+        public int x { get; set; }
+        public int y { get; set; }
+        public int id { get; set; }
     }
 }
