@@ -22,7 +22,7 @@
         </div>
         <button type="submit" class="btn-outline-danger">Submit And Convert my Layers to a Gcode File</button>
     </form>
-    <input type="button" value="Clear Layer" id="clr" size="23" onclick="erase()" style="position:absolute;top:55%;left:15%;">
+    <input type="button" value="Clear Layer" id="clr" size="23" onclick="erase()">
 </body>
 <script type="text/javascript">
     var xyVals = [];
@@ -60,6 +60,8 @@
         ctx.beginPath();
         ctx.moveTo(prevX, prevY);
         ctx.lineTo(currX, currY);
+        var xyCoords = currX + "&" + currY;
+        xyVals.push(xyCoords);
         ctx.strokeStyle = x;
         ctx.lineWidth = y;
         ctx.stroke();
@@ -67,10 +69,8 @@
     }
 
     function erase() {
-        var m = confirm("Want to clear");
-        if (m) {
-            ctx.clearRect(0, 0, w, h);
-        }
+        ctx.clearRect(0, 0, w, h);
+        xyVals = [];
     }
     function repeatPrevious() {
 
@@ -105,8 +105,6 @@
                 draw();
             }
         }
-        var xyCoords = currX + "&" + currY;
-        xyVals.push(xyCoords);
     }
 </script>
 <script src="~/lib/signalr/dist/browser/signalr.js"></script>
