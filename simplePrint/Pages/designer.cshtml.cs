@@ -27,6 +27,7 @@ namespace simplePrint
         }
         public IActionResult OnPost()
         {
+            string fileName = Guid.NewGuid().ToString() + ".gcode";
             float currentZ = 0;
             float currentE = 0;
             List<string> gcodeFile = new List<string>()
@@ -52,7 +53,7 @@ namespace simplePrint
                 currentZ += float.Parse(zRate);
             }
             gcodeFile.Add("G92 E0");
-            var gcode = System.IO.File.CreateText("wwwroot/gcode/tempGcode.gcode");
+            var gcode = System.IO.File.CreateText("wwwroot/gcode/" + fileName);
             foreach (string line in gcodeFile)
             {
                 gcode.WriteLine(line);
@@ -60,9 +61,9 @@ namespace simplePrint
             gcode.Flush();
             gcode.Dispose();
             var net = new System.Net.WebClient();
-            var data = net.DownloadData("wwwroot/gcode/tempGcode.gcode");
+            var data = net.DownloadData("wwwroot/gcode/" + fileName);
             var content = new System.IO.MemoryStream(data);
-            System.IO.File.Delete("wwwroot/gcode/tempGcode.gcode");
+            System.IO.File.Delete("wwwroot/gcode/" + fileName);
             return File(content, "application/force-download", "your-simpleprint-design.gcode");
         }
     }
