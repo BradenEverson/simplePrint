@@ -25,10 +25,10 @@ namespace simplePrint
         {
             this.points = points;
         }
-        public void OnPost()
+        public IActionResult OnPost()
         {
-            int currentZ = 0;
-            int currentE = 0;
+            float currentZ = 0;
+            float currentE = 0;
             List<string> gcodeFile = new List<string>()
             {
                 ";Made With Simple Print :)",
@@ -47,16 +47,23 @@ namespace simplePrint
                 foreach (Point point in pointsInLayer)
                 {
                     gcodeFile.Add("G1 X" + point.x + " Y" + point.y + " Z" + currentZ + " E" + currentE);
-                    currentE += Int32.Parse(eRate);
+                    currentE += float.Parse(eRate);
                 }
-                currentZ += Int32.Parse(zRate);
+                currentZ += float.Parse(zRate);
             }
             gcodeFile.Add("G92 E0");
+            var gcode = System.IO.File.CreateText("wwwroot/gcode/tempGcode.gcode");
             foreach (string line in gcodeFile)
             {
-                Console.WriteLine(line);
+                gcode.WriteLine(line);
             }
-
+            gcode.Flush();
+            gcode.Dispose();
+            var net = new System.Net.WebClient();
+            var data = net.DownloadData("wwwroot/gcode/tempGcode.gcode");
+            var content = new System.IO.MemoryStream(data);
+            System.IO.File.Delete("wwwroot/gcode/tempGcode.gcode");
+            return File(content, "application/force-download", "your-simpleprint-design.gcode");
         }
     }
 }

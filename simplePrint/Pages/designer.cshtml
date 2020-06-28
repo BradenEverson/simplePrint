@@ -6,7 +6,6 @@
 <h1>designer</h1>
 <body onload="init()">
     <canvas id="can" width="400" height="400" style="align-content:center;top:10%;left:10%;border:2px solid;"></canvas>
-    <input type="button" value="Clear Layer" id="clr" size="23" onclick="erase()" style="position:absolute;top:55%;left:15%;">
     <div class="container">
         <div class="row">
             <div class="col-6">
@@ -19,10 +18,11 @@
             <input class="form-control" type="text" asp-for="bedTemp" placeholder="Bed Temperature in Celsius" />
             <input class="form-control" type="text" asp-for="extTemp" placeholder="Nozzle Temperature(180-200C for pla)" />
             <input class="form-control" type="text" asp-for="zRate" placeholder="Steps per Z layer" />
-            <input class="form-control" type="text" asp-for="eRate" placeholder="Steps for extruder(Should usually be around .4)" />
+            <input class="form-control" type="text" asp-for="eRate" placeholder="Steps for extruder" />
         </div>
         <button type="submit" class="btn-outline-danger">Submit And Convert my Layers to a Gcode File</button>
     </form>
+    <input type="button" value="Clear Layer" id="clr" size="23" onclick="erase()" style="position:absolute;top:55%;left:15%;">
 </body>
 <script type="text/javascript">
     var xyVals = [];
