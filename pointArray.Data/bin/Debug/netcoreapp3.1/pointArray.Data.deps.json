@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "pointArray.Data/1.0.0": {
+        "dependencies": {
+          "PointsArray.Core": "1.0.0"
+        },
+        "runtime": {
+          "pointArray.Data.dll": {}
+        }
+      },
+      "PointsArray.Core/1.0.0": {
+        "runtime": {
+          "PointsArray.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "pointArray.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PointsArray.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simplePrint", "simplePrint\simplePrint.csproj", "{C3965AA8-0955-4967-B4ED-D5BDDC05F41D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "simplePrint", "simplePrint\simplePrint.csproj", "{C3965AA8-0955-4967-B4ED-D5BDDC05F41D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pointArray.Data", "pointArray.Data\pointArray.Data.csproj", "{6450387C-CFFA-456D-81A2-38AA5CCC49EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointsArray.Core", "PointsArray.Core\PointsArray.Core.csproj", "{A99770F8-CA8D-4A80-B3CF-66886A029BF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{C3965AA8-0955-4967-B4ED-D5BDDC05F41D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3965AA8-0955-4967-B4ED-D5BDDC05F41D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3965AA8-0955-4967-B4ED-D5BDDC05F41D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6450387C-CFFA-456D-81A2-38AA5CCC49EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6450387C-CFFA-456D-81A2-38AA5CCC49EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6450387C-CFFA-456D-81A2-38AA5CCC49EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6450387C-CFFA-456D-81A2-38AA5CCC49EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A99770F8-CA8D-4A80-B3CF-66886A029BF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A99770F8-CA8D-4A80-B3CF-66886A029BF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A99770F8-CA8D-4A80-B3CF-66886A029BF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A99770F8-CA8D-4A80-B3CF-66886A029BF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

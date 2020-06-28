@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using pointArray.Data;
 
 namespace simplePrint
 {
@@ -25,6 +26,7 @@ namespace simplePrint
         {
             services.AddRazorPages();
             services.AddSignalR();
+            services.AddSingleton<IPointData, InMemoryPointLayerDatabase>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,10 +42,6 @@ namespace simplePrint
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.UseSignalR(routes =>
-            {
-                routes.MapHub <ImageHub>("/ImageHub");
-            });
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -54,6 +52,7 @@ namespace simplePrint
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapHub<ImageHub>("/imagehub");
             });
         }
     }

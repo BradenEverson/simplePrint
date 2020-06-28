@@ -1797,6 +1797,29 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "pointArray.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "PointsArray.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/pointArray.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/pointArray.Data.dll": {}
+        }
+      },
+      "PointsArray.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/PointsArray.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PointsArray.Core.dll": {}
+        }
       }
     }
   },
@@ -6063,11 +6086,23 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "pointArray.Data/1.0.0": {
+      "type": "project",
+      "path": "../pointArray.Data/pointArray.Data.csproj",
+      "msbuildProject": "../pointArray.Data/pointArray.Data.csproj"
+    },
+    "PointsArray.Core/1.0.0": {
+      "type": "project",
+      "path": "../PointsArray.Core/PointsArray.Core.csproj",
+      "msbuildProject": "../PointsArray.Core/PointsArray.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.3"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.3",
+      "PointsArray.Core >= 1.0.0",
+      "pointArray.Data >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6103,7 +6138,14 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\source\\repos\\simplePrint\\pointArray.Data\\pointArray.Data.csproj": {
+              "projectPath": "D:\\source\\repos\\simplePrint\\pointArray.Data\\pointArray.Data.csproj"
+            },
+            "D:\\source\\repos\\simplePrint\\PointsArray.Core\\PointsArray.Core.csproj": {
+              "projectPath": "D:\\source\\repos\\simplePrint\\PointsArray.Core\\PointsArray.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

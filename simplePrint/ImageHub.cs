@@ -1,16 +1,26 @@
 ﻿using Microsoft.AspNetCore.SignalR;
+using pointArray.Data;
+using PointsArray.Core;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace simplePrint
 {
     public class ImageHub : Hub
     {
-        public async Task sendImage(string user, string imageUrl)
+        private readonly IPointData points;
+        public ImageHub(IPointData points)
         {
-            await this.Clients.Caller.SendAsync("receiveImage",user,imageUrl);
+            this.points = points;
+        }
+        public async Task SendMessage(string pointArray)
+        {
+            Console.WriteLine(pointArray);
+            List<Point> pointsOfCurrentLayer = new List<Point>();
+            points.add(pointsOfCurrentLayer);
+            Console.WriteLine(points.getLength());
+            await Clients.Caller.SendAsync("ReceiveMessage", pointArray);
         }
     }
 }

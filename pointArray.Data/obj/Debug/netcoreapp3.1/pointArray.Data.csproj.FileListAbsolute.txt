@@ -1,0 +1,11 @@
+D:\source\repos\simplePrint\pointArray.Data\bin\Debug\netcoreapp3.1\pointArray.Data.deps.json
+D:\source\repos\simplePrint\pointArray.Data\bin\Debug\netcoreapp3.1\pointArray.Data.dll
+D:\source\repos\simplePrint\pointArray.Data\bin\Debug\netcoreapp3.1\pointArray.Data.pdb
+D:\source\repos\simplePrint\pointArray.Data\bin\Debug\netcoreapp3.1\PointsArray.Core.dll
+D:\source\repos\simplePrint\pointArray.Data\bin\Debug\netcoreapp3.1\PointsArray.Core.pdb
+D:\source\repos\simplePrint\pointArray.Data\obj\Debug\netcoreapp3.1\pointArray.Data.csprojAssemblyReference.cache
+D:\source\repos\simplePrint\pointArray.Data\obj\Debug\netcoreapp3.1\pointArray.Data.AssemblyInfoInputs.cache
+D:\source\repos\simplePrint\pointArray.Data\obj\Debug\netcoreapp3.1\pointArray.Data.AssemblyInfo.cs
+D:\source\repos\simplePrint\pointArray.Data\obj\Debug\netcoreapp3.1\pointArray.Data.csproj.CopyComplete
+D:\source\repos\simplePrint\pointArray.Data\obj\Debug\netcoreapp3.1\pointArray.Data.dll
+D:\source\repos\simplePrint\pointArray.Data\obj\Debug\netcoreapp3.1\pointArray.Data.pdb

@@ -108,3 +108,7 @@ D:\source\repos\simplePrint\simplePrint\obj\Debug\netcoreapp3.1\simplePrint.dll
 D:\source\repos\simplePrint\simplePrint\obj\Debug\netcoreapp3.1\simplePrint.pdb
 D:\source\repos\simplePrint\simplePrint\obj\Debug\netcoreapp3.1\Razor\Pages\designer.cshtml.g.cs
 D:\source\repos\simplePrint\simplePrint\bin\Debug\netcoreapp3.1\libman.json
+D:\source\repos\simplePrint\simplePrint\bin\Debug\netcoreapp3.1\pointArray.Data.dll
+D:\source\repos\simplePrint\simplePrint\bin\Debug\netcoreapp3.1\PointsArray.Core.dll
+D:\source\repos\simplePrint\simplePrint\bin\Debug\netcoreapp3.1\pointArray.Data.pdb
+D:\source\repos\simplePrint\simplePrint\bin\Debug\netcoreapp3.1\PointsArray.Core.pdb

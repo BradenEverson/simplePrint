@@ -1,23 +1,23 @@
-﻿const connection = new signalR.HubConnectionBuilder()
-    .withUrl("/chatHub")
-    .build();
+﻿"use strict";
 
-//This method receive the message and Append to our list  
-connection.on("ReceiveMessage", (user, message) => {
-    const msg = message.replace(/&/g, "&").replace(/</g, "<").replace(/>/g, ">");
-    const encodedMsg = user + " :: " + msg;
-    const li = document.createElement("li");
-    li.textContent = encodedMsg;
-    document.getElementById("messagesList").appendChild(li);
+var connection = new signalR.HubConnectionBuilder().withUrl("/imageHub").build();
+
+//Disable send button until connection is established
+document.getElementById("sendButton").disabled = true;
+
+connection.on("ReceiveMessage", function (user, message) {
+    console.log("Saved Successfully!");
 });
 
-connection.start().catch(err => console.error(err.toString()));
+connection.start().then(function () {
+    document.getElementById("sendButton").disabled = false;
+}).catch(function (err) {
+    return console.error(err.toString());
+});
 
-//Send the message  
-
-document.getElementById("sendMessage").addEventListener("click", event => {
-    const user = document.getElementById("userName").value;
-    const message = document.getElementById("userMessage").value;
-    connection.invoke("SendMessage", user, message).catch(err => console.error(err.toString()));
+document.getElementById("sendButton").addEventListener("click", function (event) {
+    connection.invoke("SendMessage", xyVals.join()).catch(function (err) {
+        return console.error(err.toString());
+    });
     event.preventDefault();
-}); 
+});
